@@ -11,7 +11,7 @@
 <body>
   <div id="app">
     <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
-    <input type="text" placeholder="messageを入力" v-model="newMessage" v-on:keyup.enter="addUserList(newMessage)"></p>
+    <input type="text" placeholder="messageを入力" v-model="newMessage.body" v-on:keyup.enter="addUserList(newMessage)"></p>
   </div>
 
   <script type="text/x-template" id="modal-template">
