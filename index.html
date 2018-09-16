@@ -15,36 +15,34 @@
   <header class="nav">
     <div class="hero is-info is-bold">
       <div class="hero-body">
-          <div class="container">
-              <h1 class="title">質問ジェネレーター</h1>
-              <h2 class="subtitle">©Champon</h2>
-          </div>
+        <div class="container">
+          <h1 class="title">質問ジェネレーター</h1>
+          <h2 class="subtitle">©Champon</h2>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- main -->
-  <main>
+  <main id="app">
 
     <!-- ChatView -->
-
-    <div id="app">
-        <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
-        <input type="text" placeholder="messageを入力" v-model="newMessage" v-on:keyup.enter="addUserList(newMessage)"></p>
-      </div>
+    <div>
+      <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
+    </div>
 
     <!-- SearchBox -->
-      <div class="field has-addons">
-        <div class="control is-expanded">
-          <input class="input" type="text" placeholder="メッセージを入力">
-        </div>
-        <div class="control">
-          <a class="button is-info">
-            送信
-          </a>
-        </div>
-        <button class="button is-link">＋</button>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input type="text" placeholder="messageを入力" v-model="newMessage" v-on:keyup.enter="addUserList(newMessage)"></p>
       </div>
+      <div class="control">
+        <a class="button is-info">
+          送信
+        </a>
+      </div>
+      <button class="button is-link">＋</button>
+    </div>
 
   </main>
 
@@ -83,4 +81,3 @@
 </body>
 
 </html>
-

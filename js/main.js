@@ -1,10 +1,7 @@
 new Vue({
   el: '#app',
   data: {
-    newMessage: {
-      type: '',
-      body: ''
-    },
+    newMessage: '',
     userMsgList: [],
     botMsgList: [
       { type: "lang", body: '聞きたい言語やFWはなんですか' }
@@ -14,7 +11,7 @@ new Vue({
     addUserList: function (newMessage) {
       this.userMsgList.push({
         type: 'LANG',
-        body: newMessage.body
+        body: newMessage
       });
       this.newMessage = '';
     },
