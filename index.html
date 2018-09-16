@@ -7,7 +7,24 @@
   <title>Title</title>
 </head>
 <body>
-
+  <script type="text/x-template" id="modal-template">
+    <transition name="modal">
+      <div class="modal-mask" @click="$emit('close')">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="modal-body">
+              <p>これはチャットしてる間に質問できる質問生成サービスです</p>
+              <p>さっそくチャットを始めましょう！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </script>
+  <div id="modalWindow">
+    <modal v-if="showModal" @close="showModal = false">
+    </modal>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
