@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -9,10 +10,54 @@
 </head>
 
 <body>
-  <div id="app">
-    <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
-    <input type="text" placeholder="messageを入力" v-model="newMessage.body" v-on:keyup.enter="addUserList(newMessage)"></p>
-  </div>
+
+  <!-- header -->
+  <header class="nav">
+    <div class="hero is-info is-bold">
+      <div class="hero-body">
+          <div class="container">
+              <h1 class="title">質問ジェネレーター</h1>
+              <h2 class="subtitle">©Champon</h2>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- ChatView -->
+
+    <div id="app">
+        <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
+        <input type="text" placeholder="messageを入力" v-model="newMessage" v-on:keyup.enter="addUserList(newMessage)"></p>
+      </div>
+
+    <!-- SearchBox -->
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          <input class="input" type="text" placeholder="メッセージを入力">
+        </div>
+        <div class="control">
+          <a class="button is-info">
+            送信
+          </a>
+        </div>
+        <button class="button is-link">＋</button>
+      </div>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
 
   <script type="text/x-template" id="modal-template">
     <transition name="modal">
@@ -34,6 +79,8 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 
 </html>
+
