@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <title>Title</title>
 </head>
+
 <body>
+  <div id="app">
+    <li v-for="userMsg in userMsgList">{{ userMsg.body }}</li>
+    <input type="text" placeholder="messageを入力" v-model="newMessage" v-on:keyup.enter="addUserList(newMessage)"></p>
+  </div>
+
   <script type="text/x-template" id="modal-template">
     <transition name="modal">
       <div class="modal-mask" @click="$emit('close')">
@@ -28,4 +35,5 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
